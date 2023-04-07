@@ -2,13 +2,15 @@ import React from "react";
 import Newest from "@/components/newest";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/config/firebase";
-type Props = {};
+type Props = {
+  auctionsList: any;
+};
 
 const index = (props: Props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div>
-      <Newest />
+      <Newest items={props.auctionsList} />
     </div>
   );
 };
@@ -18,6 +20,8 @@ export async function getServerSideProps() {
   const dataSnapShot = await getDocs(collection(db, "auction"));
   dataSnapShot.forEach(async (docRef) => {
     const value = docRef.data();
+    const id = docRef.id;
+    value.refId = id;
     auctionsList.push(value);
   });
   return {
