@@ -1,16 +1,33 @@
-import React from 'react'
-import Newest from "@/components/newest"
-type Props = {}
+import React from "react";
+import Newest from "@/components/newest";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "@/config/firebase";
+type Props = {};
 
 const index = (props: Props) => {
+  console.log(props);
   return (
     <div>
-      <Newest/>
+      <Newest />
     </div>
-  )
+  );
+};
+
+export async function getServerSideProps() {
+  const auctionsList: any = [];
+  const dataSnapShot = await getDocs(collection(db, "auction"));
+  dataSnapShot.forEach(async (docRef) => {
+    const value = docRef.data();
+    auctionsList.push(value);
+  });
+  return {
+    props: {
+      auctionsList,
+    },
+  };
 }
 
-export default index
+export default index;
 
 // import Head from "next/head";
 // import Image from "next/image";
