@@ -13,7 +13,12 @@ const Item = (props: Props) => {
       // console.log();
     }
   }, []);
-  return <div>Item</div>;
+  return(
+
+    <div>
+  </div>
+  ) 
+
 };
 
 export default Item;

@@ -6,7 +6,6 @@ import { getDocInfo } from "@/firebase/firebaseService";
 type Props = {};
 
 const Card = ({ key, product, refId }: any) => {
- 
   return (
     <div className="col-span-6 sm:col-span-3 md:col-span-4  lg:col-span-3 2xl:col-span-2 shadow-xl my-1 md:my-4 md:mx-6 bg-palette-card rounded-xl flex relative">
       <div className="flex md:items-center md:flex-col relative w-full">
@@ -30,6 +29,7 @@ const Card = ({ key, product, refId }: any) => {
             </h3>
           </div>
         </div>
+       
       </div>
     </div>
   );
