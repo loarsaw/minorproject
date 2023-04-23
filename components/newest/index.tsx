@@ -12,7 +12,7 @@ const Newest = (products: any) => {
   return (
     <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
       {products.items.map((product: any) => (
-        <div>
+        <div key={product.refId}>
           <img
             className="h-auto max-w-full rounded-lg hover:cursor-pointer"
             src={product.image}
