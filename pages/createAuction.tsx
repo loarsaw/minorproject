@@ -16,7 +16,7 @@ import { useState, useRef } from "react";
 import { db, storage } from "@/config/firebase";
 type Props = {};
 
-const createAuction = (props: Props) => {
+const Index = (props: Props) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [file, setFile] = useState(null);
@@ -90,4 +90,4 @@ const createAuction = (props: Props) => {
   );
 };
 
-export default createAuction;
+export default Index;
