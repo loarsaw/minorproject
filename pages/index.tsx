@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Newest from "@/components/newest";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/config/firebase";
+import { auth, db } from "@/config/firebase";
+import { commodities } from "@/db";
+import { onAuthStateChanged } from "firebase/auth";
 type Props = {
   auctionsList: any;
 };
 
 const index = (props: Props) => {
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        console.log(user);
+      } else {
+        console.log("User Logged Out");
+      }
+    });
+  }, []);
   // console.log(props);
   return (
     <div>
