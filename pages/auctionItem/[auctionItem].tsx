@@ -13,7 +13,7 @@ const Item = (props: Props) => {
   const [user, setUser] = useState<any>();
   useEffect(() => {
     getData();
-  }, []);
+  }, [pushToAuction]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user: any) => {
@@ -45,7 +45,8 @@ const Item = (props: Props) => {
             <img
               alt="ecommerce"
               className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-              src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg"
+              src={objValue.image}
+              // src="https://www.whitmorerarebooks.com/pictures/medium/2465.jpg"
             />
             <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
               {/* <h2 className="text-sm title-font text-gray-500 tracking-widest">

@@ -6,7 +6,6 @@ export async function getDocInfo(id: any) {
   const ref = doc(db, "auction", id);
   const dataSnap = await getDoc(ref);
   if (dataSnap.exists()) {
-    // console.log(dataSnap.data());
     const dataValue = dataSnap.data();
     return dataValue;
   }
