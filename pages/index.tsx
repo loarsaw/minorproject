@@ -8,7 +8,7 @@ type Props = {
   auctionsList: any;
 };
 
-const index = (props: Props) => {
+const Index = (props: Props) => {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -42,7 +42,7 @@ export async function getServerSideProps() {
   };
 }
 
-export default index;
+export default Index;
 
 // import Head from "next/head";
 // import Image from "next/image";
