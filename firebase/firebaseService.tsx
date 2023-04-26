@@ -16,5 +16,6 @@ export async function addToAuction({ id, data }: any) {
   await updateDoc(ref, {
     price: data.price,
     winnerName: data.name,
+    photoURL: data.photoURL,
   });
 }

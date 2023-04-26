@@ -37,7 +37,7 @@ export async function getServerSideProps() {
   });
   return {
     props: {
-      auctionsList,
+      auctionsList: JSON.parse(JSON.stringify(auctionsList)),
     },
   };
 }
